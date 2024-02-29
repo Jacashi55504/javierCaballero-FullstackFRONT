@@ -14,23 +14,29 @@
     
     <!-- Navbar -->
     <nav class="navbar navbar-default navbar1 border-bottom border-body navbar-expand-lg py-4">
-        <div class="container-fluid ">
+        <div class="container-fluid">
             <!-- Brand -->
-          <a class="navbar-brand mb-0 h1" href="#">VoidVials</a>
+          <a class="navbar-brand mb-0 h1" href="index.html">VoidVials</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAlt" aria-controls="navbarNavAlt" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavAlt">
+          <div class="collapse navbar-collapse" id="#navbarNavAlt">
             <!-- Menu (<li> necessary for responsive) -->
             <ul class="navbar-nav navbar-nav-scroll me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Products</a>
+                <li class="nav-item navbar1">
+                  <a class="nav-link active" aria-current="page" href="products.html">Products</a>
                 </li>
+                <!-- Coming Soon...
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Deals</a>
+                  <a class="nav-link" href="deals.html">Deals</a>
                 </li>
+                -->
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About us</a>
+                    <a class="nav-link" href="about.html">About us</a>
+                </li>
+  
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact us</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link disabled" aria-disabled="true">Coming Soon</a>
@@ -51,14 +57,14 @@
 
             <div class="container">
                 <div class="row align-items-center text-dark justify-content-between">
-                    <div class="col-lg-6 section1">
+                    <div class="col-lg-6 section1 ">
                         <h1>Try the new: NZT-48</h1>
                         
-                        <p class="text-dark " style="color: blue !important;"> Oh! Onions. Yams. Avocados. Lettuce. Arugula (to some, “rocket”). Persian cucumbers, in addition to aforementioned “normal” cucumbers. Artichokes. Zucchinis. Pumpkins. Squash (what some cultures call pumpkins). Sweet potatoes and potato-potatoes. Jackfruit. Monk fruit. Fruit of the Loom. Fruits of our labor (this website). Sorrel. Pineapple. Mango. Gooseberries. Blackberries. Tomatoes. Heirloom tomatoes. Beets. Chives. Corn. Endive. Escarole, which, we swear, we’re vendors of organic produce, but if you asked us to describe what escaroles are...</p>
+                        <p>Unleash the full potential of your brain with the revolutionary NZT-48. Experience unprecedented levels of mental clarity, enhanced memory, and the ability to process information at lightning speed. Imagine mastering new skills, languages, and concepts with ease, giving you the edge in every aspect of your life. With NZT-48, you're not just one step ahead; you're leaps and bounds beyond the competition. Elevate your cognitive abilities and open the door to possibilities you never thought possible. Embrace the future of cognitive enhancement—embrace the power of NZT-48. (Please note, this is a reference).</p>
                         <button class="btn btn-success">Browse our shop</button>
                     </div>
                     <div class="col-lg-6">
-                        <img src="images/nzt-48.png" class="img-fluid rounded-end" alt="...">
+                        <img src="images/nzt-48.jpg" class="img-fluid rounded-end" alt="...">
                     </div>
                 </div>
             </div>
@@ -66,86 +72,93 @@
     </section>
 
     <!-- Products -->
-    <section class="py-5">
-        <div class="container">
-            <div class="row row-cols-1 row-cols-md-4 g-4">
-                <!-- Repeat this for each product -->
-                <div class="col-3">
-                    <div class="card h-100 ">
-                        <img src="product.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Product Title</h5>
-                            
-                            <p class="card-text">Product Description</p>
+    <section class="py-5 container1 text-white">
+        <div class="container container-fluid">
+            <h2 class="py-3">PRODUCTS</h2>
+
+            
+            <!--4 med, 2sm, 1responsive-->
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 pb-5 text-center">
+                
+                <div class="col ">
+                    <div class="card h-100 card1 text-white">
+                        <img src="images/RedPill.png" class="card-img-top" alt="...">
+                        <div class="card-body text-dark     ">
+                            <h5 class="card-title">Red pill</h5>
+                            <p class="card-text">Embrace the raw energy of the Red Pill, the catalyst for passion and drive that fuels your ambition. </p>
                         </div>
-                        <div class="card-footer">
-                            <small class="text-muted">★★★★☆</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="card h-100 ">
-                        <img src="product.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Product Title</h5>
-                            
-                            <p class="card-text">Product Description</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">★★★★☆</small>
+                        <div class="card-footer bg-dark border-0">
+                            <small class="text-warning">★★★★☆</small>
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
-                    <div class="card h-100 ">
-                        <img src="product.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Product Title</h5>
-                            
-                            <p class="card-text">Product Description</p>
+                <div class="col">
+                    <div class="card h-100 card1 text-white">
+                        <img src="images/Felix.png" class="card-img-top " alt="...">
+                        <div class="card-body text-dark">
+                            <h5 class="card-title">Felix Felicis</h5>
+                            <p class="card-text">Liquid luck</p>
                         </div>
-                        <div class="card-footer">
-                            <small class="text-muted">★★★★☆</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="card h-100 ">
-                        <img src="product.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Product Title</h5>
-                            
-                            <p class="card-text">Product Description</p>
-                        </div>
-                        <div class="card-footer">
-                            <small class="text-muted">★★★★☆</small>
+                        <div class="card-footer bg-dark border-0">
+                            <small class="text-warning">★★★★★</small>
                         </div>
                     </div>
                 </div>
-                <!-- End of product -->
+                <div class="col">
+                    <div class="card h-100 card1 text-white">
+                        <img src="images/BluePill.png" class="card-img-top" alt="...">
+                        <div class="card-body text-dark">
+                            <h5 class="card-title">Blue pill</h5>
+                            <p class="card-text">Dive into the depths of your consciousness with the Blue Pill.</p>
+                        </div>
+                        <div class="card-footer bg-dark border-0">
+                            <small class="text-warning">★☆☆☆☆</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 card1 text-white">
+                        <img src="images/Spice.png" class="card-img-top" alt="...">
+                        <div class="card-body text-dark">
+                            <h5 class="card-title">Melagne</h5>
+                            <p class="card-text">The mos valuable resource in the universe, offering extended life, among other things.</p>
+                        </div>
+                        <div class="card-footer bg-dark border-0">
+                            <small class="text-warning">★★★☆☆</small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button... -->
             </div>
+            <a href="products.html" class="btn btn-success float-end py-2">Browse our products</a>
+
         </div>
     </section>
 
-    <!-- Deals -->
-    <section class="bg-secondary text-white p-5">
+    <div class="container p-5"></div>
+
+    <!-- Coming Soon...
+    <section class="bg-secondary text-white p-5 " style="background-color: #5B5B5B !important;">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
                     <h3>Special Deal 1</h3>
-                    <p>Description</p>
+                    <p>Description of Special Deal 1 goes here. Highlight what makes this deal special and why customers should take advantage of it.</p>
                 </div>
                 <div class="col-md-4">
                     <h3>Special Deal 2</h3>
-                    <p>Description</p>
+                    <p>Description of Special Deal 2 goes here. Provide details on what the deal includes and any particular terms or conditions that apply.</p>
                 </div>
                 <div class="col-md-4">
                     <h3>Special Deal 3</h3>
-                    <p>Description</p>
+                    <p>Description of Special Deal 3 goes here. Explain the benefits of this deal and how it compares to others, if applicable.</p>
                 </div>
             </div>
+            <button class="btn btn-success float-end py-2  ">Browse our deals</button>
         </div>
     </section>
+    -->
     
 </body>
 </html>

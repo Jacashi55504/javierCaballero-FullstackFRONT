@@ -1,14 +1,36 @@
-
-
-.section1 {
+body {
     background-color: #B7B7A4;
-    p{
-        color: #1f721f !important;
-    }
-
+    font-family: 'Inter', sans-serif; 
 }
 
-.navbar1{
+/* Titles with "newsreader" font */
+.section1 h1 {
+    color: #141010;
+    font-family: 'newsreader', serif;
+}
+
+/* Normal text with "Inter" font */
+.section1 p {
+    color: #141010 !important;
+    font-family: 'Inter', sans-serif;
+}
+
+.navbar1 {
     background-color: #5B5B5B;
+    font-family: 'Inter', sans-serif; 
 }
 
+.navbar1 li,
+.navbar1 a {
+    color: #DEEAEE !important;
+}
+
+.container1 {
+    background-color: #5B5B5B;
+    font-family: 'Inter', sans-serif; 
+}
+
+.card1 {
+    background-color: #D4D4D4;
+    font-family: 'Inter', sans-serif;
+}
