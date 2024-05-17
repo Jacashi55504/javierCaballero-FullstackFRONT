@@ -7,8 +7,8 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css">
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
     
@@ -16,58 +16,62 @@
     <nav class="navbar navbar-default navbar1 border-bottom border-body navbar-expand-lg py-4">
         <div class="container-fluid">
             <!-- Brand -->
-          <a class="navbar-brand mb-0 h1" href="index.html">VoidVials</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAlt" aria-controls="navbarNavAlt" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="#navbarNavAlt">
-            <!-- Menu (<li> necessary for responsive) -->
-            <ul class="navbar-nav navbar-nav-scroll me-auto mb-2 mb-lg-0">
-                <li class="nav-item navbar1">
-                  <a class="nav-link active" aria-current="page" href="products.html">Products</a>
-                </li>
-                <!-- Coming Soon...
-                <li class="nav-item">
-                  <a class="nav-link" href="deals.html">Deals</a>
-                </li>
-                -->
-                <li class="nav-item">
-                    <a class="nav-link" href="about.html">About us</a>
-                </li>
-  
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link disabled" aria-disabled="true">Coming Soon</a>
-                </li>
-              </ul>
-            <!-- Search icon -->
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-success" type="submit">Search</button>
-            </form>
-          </div>
+            <a class="navbar-brand mb-0 h1" href="index.html">VoidVials</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item navbar1">
+                        <a class="nav-link active" aria-current="page" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Coming Soon</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user" style="color: #020812;"></i>
+                        </a>
+                        <ul class="dropdown-menu" id="dropdownMenu">
+                            <li><a class="dropdown-item" href="./login.html">Iniciar sesión</a></li>
+                            <li><a class="dropdown-item" href="./register.html">Registrarse</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./pedidos.html" class="btn btn-outline-success">Mis pedidos</a>
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-outline-success" id="ver-carrito" data-bs-toggle="modal" data-bs-target="#productos-agregados">Ver Carrito</button>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-      <!-- Start section --> 
+    <!-- Start section --> 
     <section class="text-dark p-5">
         <div class="container p-5"></div>
-
-            <div class="container">
-                <div class="row align-items-center text-dark justify-content-between">
-                    <div class="col-lg-6 section1 ">
-                        <h1>Try the new: NZT-48</h1>
-                        
-                        <p>Unleash the full potential of your brain with the revolutionary NZT-48. Experience unprecedented levels of mental clarity, enhanced memory, and the ability to process information at lightning speed. Imagine mastering new skills, languages, and concepts with ease, giving you the edge in every aspect of your life. With NZT-48, you're not just one step ahead; you're leaps and bounds beyond the competition. Elevate your cognitive abilities and open the door to possibilities you never thought possible. Embrace the future of cognitive enhancement—embrace the power of NZT-48. (Please note, this is a reference).</p>
-                        <button class="btn btn-success">Browse our shop</button>
-                    </div>
-                    <div class="col-lg-6">
-                        <img src="images/nzt-48.jpg" class="img-fluid rounded-end" alt="...">
-                    </div>
+        <div class="container">
+            <div class="row align-items-center text-dark justify-content-between">
+                <div class="col-lg-6 section1">
+                    <h1>Try the new: NZT-48</h1>
+                    <p>Unleash the full potential of your brain with the revolutionary NZT-48. Experience unprecedented levels of mental clarity, enhanced memory, and the ability to process information at lightning speed. Imagine mastering new skills, languages, and concepts with ease, giving you the edge in every aspect of your life. With NZT-48, you're not just one step ahead; you're leaps and bounds beyond the competition. Elevate your cognitive abilities and open the door to possibilities you never thought possible. Embrace the future of cognitive enhancement—embrace the power of NZT-48. (Please note, this is a reference).</p>
+                    <button class="btn btn-success">Browse our shop</button>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/nzt-48.jpg" class="img-fluid rounded-end" alt="...">
                 </div>
             </div>
+        </div>
         <div class="container p-5"></div>
     </section>
 
@@ -75,32 +79,34 @@
     <section class="py-5 container1 text-white">
         <div class="container container-fluid">
             <h2 class="py-3">PRODUCTS</h2>
-
-            
-            <!--4 med, 2sm, 1responsive-->
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4 pb-5 text-center">
-                
-                <div class="col ">
+                <div class="col">
                     <div class="card h-100 card1 text-white">
                         <img src="images/RedPill.png" class="card-img-top" alt="...">
-                        <div class="card-body text-dark     ">
+                        <div class="card-body text-dark">
                             <h5 class="card-title">Red pill</h5>
-                            <p class="card-text">Embrace the raw energy of the Red Pill, the catalyst for passion and drive that fuels your ambition. </p>
+                            <p class="card-text">Embrace the raw energy of the Red Pill, the catalyst for passion and drive that fuels your ambition.</p>
                         </div>
                         <div class="card-footer bg-dark border-0">
                             <small class="text-warning">★★★★☆</small>
+                        </div>
+                        <div class="card-footer bg-dark border-0">
+                            <button class="btn btn-success btn-agregar"><i class="fas fa-cart-plus"></i> Add to Cart</button>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100 card1 text-white">
-                        <img src="images/Felix.png" class="card-img-top " alt="...">
+                        <img src="images/Felix.png" class="card-img-top" alt="...">
                         <div class="card-body text-dark">
                             <h5 class="card-title">Felix Felicis</h5>
                             <p class="card-text">Liquid luck</p>
                         </div>
                         <div class="card-footer bg-dark border-0">
                             <small class="text-warning">★★★★★</small>
+                        </div>
+                        <div class="card-footer bg-dark border-0">
+                            <button class="btn btn-success btn-agregar"><i class="fas fa-cart-plus"></i> Add to Cart</button>
                         </div>
                     </div>
                 </div>
@@ -114,6 +120,9 @@
                         <div class="card-footer bg-dark border-0">
                             <small class="text-warning">★☆☆☆☆</small>
                         </div>
+                        <div class="card-footer bg-dark border-0">
+                            <button class="btn btn-success btn-agregar"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                        </div>
                     </div>
                 </div>
                 <div class="col">
@@ -121,44 +130,44 @@
                         <img src="images/Spice.png" class="card-img-top" alt="...">
                         <div class="card-body text-dark">
                             <h5 class="card-title">Melagne</h5>
-                            <p class="card-text">The mos valuable resource in the universe, offering extended life, among other things.</p>
+                            <p class="card-text">The most valuable resource in the universe, offering extended life, among other things.</p>
                         </div>
                         <div class="card-footer bg-dark border-0">
                             <small class="text-warning">★★★☆☆</small>
                         </div>
+                        <div class="card-footer bg-dark border-0">
+                            <button class="btn btn-success btn-agregar"><i class="fas fa-cart-plus"></i> Add to Cart</button>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Button... -->
             </div>
             <a href="products.html" class="btn btn-success float-end py-2">Browse our products</a>
-
         </div>
     </section>
 
     <div class="container p-5"></div>
 
-    <!-- Coming Soon...
-    <section class="bg-secondary text-white p-5 " style="background-color: #5B5B5B !important;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>Special Deal 1</h3>
-                    <p>Description of Special Deal 1 goes here. Highlight what makes this deal special and why customers should take advantage of it.</p>
+    <!-- Carrito Modal -->
+    <div class="modal fade" id="productos-agregados" tabindex="-1" aria-labelledby="productosAgregadosLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productosAgregadosLabel">Productos en el Carrito</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="col-md-4">
-                    <h3>Special Deal 2</h3>
-                    <p>Description of Special Deal 2 goes here. Provide details on what the deal includes and any particular terms or conditions that apply.</p>
+                <div class="modal-body">
+                    <ul id="lista-productos" class="list-group">
+                        <!-- Productos agregados dinámicamente aquí -->
+                    </ul>
                 </div>
-                <div class="col-md-4">
-                    <h3>Special Deal 3</h3>
-                    <p>Description of Special Deal 3 goes here. Explain the benefits of this deal and how it compares to others, if applicable.</p>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="borrar-carrito">Borrar Carrito</button>
+                    <button type="button" class="btn btn-success" id="realizar-pedido">Realizar Pedido</button>
                 </div>
             </div>
-            <button class="btn btn-success float-end py-2  ">Browse our deals</button>
         </div>
-    </section>
-    -->
-    
+    </div>
+
+    <script src="behavior.js"></script>
 </body>
 </html>
