@@ -24,66 +24,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-// INICIO DE SESIÓN
-
-document.getElementById('loginForm').addEventListener('submit', async function(event) {
-    event.preventDefault();
-    
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    try {
-        const response = await fetch(`${baseURL}/users/login`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ email, password })
-        });
-
-        const data = await response.json();
-        if (data.token) {
-            // Guardar el token en localStorage
-            localStorage.setItem('token', data.token);
-            window.token = data.token;
-            alert('Inicio de sesión exitoso');
-            window.location.href = '/index.html';
-        } else {
-            alert('Credenciales inválidas');
-        }
-    } catch (error) {
-        console.error('Error al iniciar sesión:', error);
-        alert('Error al iniciar sesión');
-    }
-});
-
-// REGISTRO
-
-document.getElementById('registrationForm').addEventListener('submit', async function(event) {
-    event.preventDefault();
-    
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-
-    try {
-        const response = await fetch(`${baseURL}/users/register`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ name, email, password })
-        });
-
-        const data = await response.json();
-        alert(data.message);
-        window.location.href = '/login.html';
-    } catch (error) {
-        console.error('Error al registrar usuario:', error);
-        alert('Error al registrar usuario');
-    }
-});
-
 // CARRITO
 
 // Manejar evento de clic en el botón "Agregar al carrito"
@@ -158,7 +98,7 @@ document.getElementById('ver-carrito').addEventListener('click', function() {
 
     // Mostrar la ventana emergente del carrito
     const modalElement = document.getElementById('productos-agregados');
-    const modal = bootstrap.Modal.getInstance(modalElement) || new bootstrap.Modal(modalElement);
+    const modal = bootstrap.Modal.getInstance(modalElement);
     modal.show();
 });
 
@@ -338,12 +278,72 @@ document.getElementById('realizar-pedido').addEventListener('click', async () =>
             body: JSON.stringify(body)
         });
 
-        if (!response.ok) throw new Error('Asegurate de haber iniciado sesión');
+        if (!response.ok) throw new Error('Asegúrate de haber iniciado sesión');
         alert('Pedido realizado con éxito');
         localStorage.removeItem('carrito');
         window.location.reload();
     } catch (error) {
         console.error(error.message);
         alert('Error al realizar el pedido: ' + error.message);
+    }
+});
+
+// INICIO DE SESIÓN
+
+document.getElementById('loginForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    try {
+        const response = await fetch(`${baseURL}/users/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+        if (data.token) {
+            // Guardar el token en localStorage
+            localStorage.setItem('token', data.token);
+            window.token = data.token;
+            alert('Inicio de sesión exitoso');
+            window.location.href = '/index.html';
+        } else {
+            alert('Credenciales inválidas');
+        }
+    } catch (error) {
+        console.error('Error al iniciar sesión:', error);
+        alert('Error al iniciar sesión');
+    }
+});
+
+// REGISTRO
+
+document.getElementById('registrationForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    try {
+        const response = await fetch(`${baseURL}/users/register`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, email, password })
+        });
+
+        const data = await response.json();
+        alert(data.message);
+        window.location.href = '/login.html';
+    } catch (error) {
+        console.error('Error al registrar usuario:', error);
+        alert('Error al registrar usuario');
     }
 });
