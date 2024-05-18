@@ -1,3 +1,5 @@
+const baseURL = 'http://localhost:8000/api'; // Asegúrate de que este URL coincida con el puerto de tu backend
+
 // Verificar si hay un token JWT en localStorage
 const token = localStorage.getItem('token');
 
@@ -17,8 +19,68 @@ document.getElementById('dropdownMenu').addEventListener('click', function(event
 
 document.addEventListener('DOMContentLoaded', async () => {
     if (token) {
-        // Mostrar pedidos si hay un token
+        // Mostrar pedidos
         await cargarPedidos();
+    }
+});
+
+// INICIO DE SESIÓN
+
+document.getElementById('loginForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    try {
+        const response = await fetch(`${baseURL}/users/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+        if (data.token) {
+            // Guardar el token en localStorage
+            localStorage.setItem('token', data.token);
+            window.token = data.token;
+            alert('Inicio de sesión exitoso');
+            window.location.href = '/index.html';
+        } else {
+            alert('Credenciales inválidas');
+        }
+    } catch (error) {
+        console.error('Error al iniciar sesión:', error);
+        alert('Error al iniciar sesión');
+    }
+});
+
+// REGISTRO
+
+document.getElementById('registrationForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    try {
+        const response = await fetch(`${baseURL}/users/register`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ name, email, password })
+        });
+
+        const data = await response.json();
+        alert(data.message);
+        window.location.href = '/login.html';
+    } catch (error) {
+        console.error('Error al registrar usuario:', error);
+        alert('Error al registrar usuario');
     }
 });
 
@@ -96,7 +158,7 @@ document.getElementById('ver-carrito').addEventListener('click', function() {
 
     // Mostrar la ventana emergente del carrito
     const modalElement = document.getElementById('productos-agregados');
-    const modal = bootstrap.Modal.getInstance(modalElement);
+    const modal = bootstrap.Modal.getInstance(modalElement) || new bootstrap.Modal(modalElement);
     modal.show();
 });
 
@@ -104,7 +166,7 @@ document.getElementById('ver-carrito').addEventListener('click', function() {
 
 // Función para cargar pedidos
 async function cargarPedidos() {
-    const response = await fetch('http://localhost:8000/api/products/', {
+    const response = await fetch(`${baseURL}/pedidos`, {
         headers: {
             'Authorization': `Bearer ${token}`
         }
@@ -127,11 +189,11 @@ async function cargarPedidos() {
                 <div id="collapse${pedido._id}" class="accordion-collapse collapse" aria-labelledby="heading${pedido._id}" data-bs-parent="#accordionPedidos">
                     <div class="accordion-body">
                         <ul class="list-group mb-3">
-                            ${pedido.articulos.map((articulo, index) => `
+                            ${pedido.productos.map((producto, index) => `
                                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <span class="nombre-articulo">${articulo.nombre}</span>
-                                    <input type="number" value="${pedido.cantidades[index]}" class="form-control cantidad-articulo" style="width: 80px; text-align: center;" data-precio="${articulo.precio}" onchange="actualizarTotal('${pedido._id}')">
-                                    <button class="btn btn-sm btn-danger" onclick="borrarArticulo('${pedido._id}', '${articulo._id}')">Eliminar</button>
+                                    <span class="nombre-articulo">${producto.nombre}</span>
+                                    <input type="number" value="${pedido.cantidades[index]}" class="form-control cantidad-articulo" style="width: 80px; text-align: center;" data-precio="${producto.precio}" onchange="actualizarTotal('${pedido._id}')">
+                                    <button class="btn btn-sm btn-danger" onclick="borrarArticulo('${pedido._id}', '${producto._id}')">Eliminar</button>
                                 </li>`).join('')}
                         </ul>
                         <div class="d-flex justify-content-between align-items-center">
@@ -180,7 +242,7 @@ async function guardarPedido(id) {
         precios: detallesArticulos.map(item => item.precio)
     };
 
-    const response = await fetch(`http://localhost:8000/api/products/${id}`, {
+    const response = await fetch(`${baseURL}/pedidos/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
@@ -198,7 +260,7 @@ async function guardarPedido(id) {
 }
 
 async function borrarPedido(id) {
-    const response = await fetch(`http://localhost:8000/api/products/${id}`, {
+    const response = await fetch(`${baseURL}/pedidos/${id}`, {
         method: 'DELETE',
         headers: {
             'Authorization': `Bearer ${token}`
@@ -213,7 +275,7 @@ async function borrarPedido(id) {
 }
 
 async function borrarArticulo(pedidoId, articuloId) {
-    const response = await fetch(`http://localhost:8000/api/products/${pedidoId}/articulos/${articuloId}`, {
+    const response = await fetch(`${baseURL}/pedidos/${pedidoId}/articulos/${articuloId}`, {
         method: 'DELETE',
         headers: {
             'Authorization': `Bearer ${token}`
@@ -267,7 +329,7 @@ document.getElementById('realizar-pedido').addEventListener('click', async () =>
             precios: detallesArticulos.map(item => item.precio)
         };
 
-        const response = await fetch('http://localhost:8000/api/products/', {
+        const response = await fetch(`${baseURL}/pedidos`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -276,7 +338,7 @@ document.getElementById('realizar-pedido').addEventListener('click', async () =>
             body: JSON.stringify(body)
         });
 
-        if (!response.ok) throw new Error('Asegúrate de haber iniciado sesión');
+        if (!response.ok) throw new Error('Asegurate de haber iniciado sesión');
         alert('Pedido realizado con éxito');
         localStorage.removeItem('carrito');
         window.location.reload();
